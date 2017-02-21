@@ -56,7 +56,8 @@ module1 = Extension('umemcache',
                 include_dirs = ['./lib/'],
                 library_dirs = [],
                 libraries=libs,
-                define_macros=[('WIN32_LEAN_AND_MEAN', None)])
+                define_macros=[('WIN32_LEAN_AND_MEAN', None)],
+		extra_compile_args=['-Wno-error', '-Wno-error=format-security'])
 
 f = open('README.rst')
 try:
@@ -78,5 +79,3 @@ setup (name = 'umemcache',
        url="http://www.esn.me",
        classifiers=CLASSIFIERS,
        )
-
-
